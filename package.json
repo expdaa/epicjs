@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/expdaa/epicjs.git"
   },
-  "author": "Pavel Trekell, Ryan Burke",
+  "author": "PT,RB",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/expdaa/epicjs/issues"
