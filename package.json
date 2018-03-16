@@ -16,5 +16,14 @@
     "url": "https://github.com/expdaa/epicjs/issues"
   },
   "homepage": "https://github.com/expdaa/epicjs#readme",
-  "dependencies": {}
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-aria": "^1.6.9",
+    "angular-material": "^1.1.7",
+    "angular-messages": "^1.6.9",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  }
 }
