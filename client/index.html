@@ -1,48 +1,73 @@
 <!doctype html>
 <html lang="en" ng-app="epicJS">
+
 <head>
   <meta charset="utf-8">
   <title>R-Hack (A working title)</title>
 
+  <!-- AngularJS material Style Sheets -->
+  <link rel="stylesheet" href="/public/angular-material/angular-material.min.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/custom.css">
+
+
+
+
+  <!-- custom -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/public/css/styles.css">
-
   <script src="/public/js/scripts.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-  
+
+
   <script>
-  $( function() {
-    $( "input" ).checkboxradio();
-  } );
+    $(function () {
+      $("input").checkboxradio();
+    });
   </script>
+
+
+
 </head>
+
 <body>
-<div class="widget">
-  <h1>R-Hack</h1>
- 
-  <h2>An easy way to run R on your browser!</h2>
-  <br>
-  <fieldset>
-    <legend>Select a model: </legend>
-    <label for="radio-1">Linear Regression</label>
-    <input type="radio" name="radio-1" id="radio-1" onclick = "loadButtons();">
-    
-    <label for="radio-2">Naive Bayes</label>
-    <input type="radio" name="radio-1" id="radio-2" onclick = "loadButtons();">
-    
-    <label for="radio-3">K-Means</label>
-    <input type="radio" name="radio-1" id="radio-3" onclick = "loadButtons();">
-  </fieldset>
- <br><br>
- 
- <div id="template-buttons" style = "visibility: hidden;">
- <fieldset>
-<input class="ui-button ui-widget ui-corner-all" type="submit" value="Download Template" onclick = "downloadTemplate();">
-<input class="ui-button ui-widget ui-corner-all" type="submit" value="Upload Template" onclick = "uploadTemplate();"> 
-</fieldset>
-</div>
+
+
+  <!-- main stage -->
+  <div flex style="height: 100%" layout-fill layout-padding>
+    <ng-view></ng-view>
+  </div>
+
+
+
+
+  <!-- AngularJS -->
+  <script src="/public/angular/angular.min.js"></script>
+  <script src="/public/angular-route/angular-route.min.js"></script>
+
+
+  <!-- AngularJS Material-->
+  <script src="/public/angular-material/angular-material.js"></script>
+  <script src="/public/angular-animate/angular-animate.js"></script>
+  <script src="/public/angular-aria/angular-aria.js"></script>
+  <script src="/public/angular-messages/angular-messages.js"></script>
+
+
+
+  <!--app js files-->
+  <script src="/public/js/app/app.js"></script>
+  <script src="/public/js/app/routing.js"></script>
+
+
+
+  <!-- controllers -->
+  <script src="/public/js/app/landing/landing.ctr.js"></script>
+
+
+
+
 </body>
+
 </html>

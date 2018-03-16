@@ -6,6 +6,8 @@ const htmlController = require('./server/controllers/htmlController');
 
 // app.use('/favicon.ico', express.static(path.join(__dirname,'/public/img/favicon.ico'))); //make favicon available
 app.use('/public', express.static(path.join(__dirname, 'client')))
+app.use('/public', express.static(path.join(__dirname, 'node_modules')))
+
 
 htmlController(app,path,__dirname);
 
