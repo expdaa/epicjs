@@ -2,7 +2,7 @@
   "name": "epicjs",
   "version": "1.0.0",
   "description": "Final Project",
-  "main": "server/app.js",
+  "main": "serverApp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/expdaa/epicjs/issues"
   },
-  "homepage": "https://github.com/expdaa/epicjs#readme"
+  "homepage": "https://github.com/expdaa/epicjs#readme",
+  "dependencies": {}
 }
