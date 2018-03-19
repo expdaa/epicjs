@@ -9,14 +9,26 @@
         $routeProvider
 
             .when('/', {
-                templateUrl  : '/public/js/app/landing/landing.tpl.html',
-                controller   : 'LandingController',
-                controllerAs : 'LandingController'
+                templateUrl: '/public/js/app/landing/landing.tpl.html',
+                controller: 'LandingController',
+                controllerAs: 'LandingController'
+            })
+
+            .when('/result/lm', {
+                templateUrl: '/public/js/app/result/lm/lm.tpl.html',
+                controller: 'LMController',
+                controllerAs: 'LMController',
+                resolve:
+                    {
+                        lmResource: function (DataService) {
+                            return DataService.getLm();
+                        }
+                    }
             })
 
 
             .otherwise(
-                {redirectTo: '/'}
+                { redirectTo: '/' }
             );
 
 

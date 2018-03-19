@@ -1,3 +1,6 @@
+<a href="#/result/lm">
+    LM Result testing</a>
+
 <div>
     <h1>R-Hack</h1>
 
@@ -5,12 +8,14 @@
     <br>
 
 
+
+
     <fieldset>
         <legend>Select a model: </legend>
         <md-radio-group ng-model="data.group1">
-            <md-radio-button value="lr" onclick="loadButtons();" name="radio-1" id="radio-1" > Linear Regression</md-radio-button>
-            <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2" > Naive Bayes </md-radio-button>
-            <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3" > K-Means</md-radio-button>
+            <md-radio-button value="lr" onclick="loadButtons();" name="radio-1" id="radio-1"> Linear Regression</md-radio-button>
+            <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2"> Naive Bayes </md-radio-button>
+            <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3"> K-Means</md-radio-button>
         </md-radio-group>
         <p>Selected Value:
             <span class="radioValue">{{ data.group1 }}</span>
@@ -28,8 +33,6 @@
 
 
 
-<h1>A Very Simple DPU</h1>
+    <h1>A Very Simple DPU</h1>
 
-<button id="submitbutton">Calculate Standard Deviation</button>
-
-
+    <button id="submitbutton">Calculate Standard Deviation</button>
