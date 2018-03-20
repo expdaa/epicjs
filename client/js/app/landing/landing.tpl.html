@@ -1,38 +1,55 @@
-<a href="#/result/lm">
-    LM Result testing</a>
+<md-content layout="column" layout-fill>
 
-<div>
-    <h1>R-Hack</h1>
-
-    <h2>An easy way to run R on your browser!</h2>
-    <br>
+    <div flex="30" layout-padding>
 
 
+        <a href="#/result/lm">
+            LM Result testing</a>
+
+        <h1>R-Hack</h1>
+
+        <h2>An easy way to run R on your browser!</h2>
 
 
-    <fieldset>
-        <legend>Select a model: </legend>
-        <md-radio-group ng-model="data.group1">
-            <md-radio-button value="lr" onclick="loadButtons();" name="radio-1" id="radio-1"> Linear Regression</md-radio-button>
-            <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2"> Naive Bayes </md-radio-button>
-            <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3"> K-Means</md-radio-button>
-        </md-radio-group>
-        <p>Selected Value:
-            <span class="radioValue">{{ data.group1 }}</span>
-        </p>
-    </fieldset>
-    <br>
-    <br>
-
-    <div id="template-buttons" style="visibility: hidden;">
-        <fieldset>
-            <md-button class="md-raised" onclick="downloadTemplate();">Download Template</md-button>
-            <md-button class="md-raised" onclick="downloadTemplate();">Upload Template</md-button>
-        </fieldset>
     </div>
 
 
 
-    <h1>A Very Simple DPU</h1>
+    <div flex layout-padding>
 
-    <button id="submitbutton">Calculate Standard Deviation</button>
+
+        <fieldset>
+            <legend>Select a model: </legend>
+            <md-radio-group ng-model="data.group1">
+                <md-radio-button value="lr" onclick="loadButtons();" name="radio-1" id="radio-1"> Linear Regression</md-radio-button>
+                <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2"> Naive Bayes </md-radio-button>
+                <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3"> K-Means</md-radio-button>
+            </md-radio-group>
+            <p>Selected Value:
+                <span class="radioValue">{{ data.group1 }}</span>
+            </p>
+        </fieldset>
+        <br>
+        <br>
+
+        <div id="template-buttons" style="visibility: hidden;">
+            <fieldset>
+                <md-button class="md-raised" onclick="downloadTemplate();">Download Template</md-button>
+                <md-button class="md-raised" onclick="downloadTemplate();">Upload Template</md-button>
+            </fieldset>
+        </div>
+
+
+
+        <h1>A Very Simple DPU</h1>
+
+        <button id="submitbutton">Calculate Standard Deviation</button>
+
+
+    </div>
+
+
+
+
+
+</md-content>

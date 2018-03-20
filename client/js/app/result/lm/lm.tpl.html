@@ -1,9 +1,22 @@
-<a href="#\">Home</a>
-
-<h1>LM Result Page</h1>
-
-<canvas class="chart chart-line" chart-data="LMController.data" chart-labels="LMController.labels" chart-series="LMController.series"
-    chart-click="LMController.onClick" width="800" height="300"></canvas>
+<md-content layout="column" layout-fill>
 
 
-<pre>{{LMController.lmResource | json}}</pre>
+    <a href="#\">Home</a>
+
+    <h1>LM Result Page</h1>
+
+
+    <div style="max-width:600px">
+        <canvas id="line" class="chart chart-line" chart-data="first_data" chart-labels="first_labels" chart-series="first_series"
+            chart-options="first_options" 
+            
+            chart-dataset-override="first_datasetOverride" chart-click="onClick">
+        </canvas>
+    </div>
+
+
+
+    <pre>{{LMController.lmResource | json}}</pre> 
+
+
+</md-content>
