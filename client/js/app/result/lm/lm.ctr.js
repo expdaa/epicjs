@@ -49,6 +49,23 @@
 
 
         $scope.plData = [trace1, trace2];
+var trace1 = {
+  x: plotX,
+  y: plotY,
+  name: 'Data',
+  mode: 'markers'
+};
+
+var trace2 = {
+  x: lineX,
+  y: lineY,
+  name: 'Regression',
+  mode: 'lines'
+  
+};
+
+
+        $scope.plData = [ trace1, trace2];
         $scope.plLayout = {};
         $scope.plOptions = {};
 
