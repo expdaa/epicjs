@@ -1,3 +1,4 @@
+'use strict';
 function loadButtons(){
     let div = document.getElementById('template-buttons');
     div.style.visibility = 'visible';
