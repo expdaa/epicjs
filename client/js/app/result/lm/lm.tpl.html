@@ -1,22 +1,40 @@
 <md-content layout="column" layout-fill>
 
+    <div flex="20">
+        <a href="#\">Home</a>
 
-    <a href="#\">Home</a>
+        <h1>LM Result Page</h1>
 
-    <h1>LM Result Page</h1>
-
-
-    <div style="max-width:600px">
-        <canvas id="line" class="chart chart-line" chart-data="first_data" chart-labels="first_labels" chart-series="first_series"
-            chart-options="first_options" 
-            
-            chart-dataset-override="first_datasetOverride" chart-click="onClick">
-        </canvas>
     </div>
 
 
 
-    <pre>{{LMController.lmResource | json}}</pre> 
 
+
+
+    <div flex="50" layout="row">
+
+
+        <div flex="50" style="background-color: red">
+            <plotly plotly-data="plData" plotly-layout="plLayout" plotly-options="plOptions"></plotly>
+
+        </div>
+
+        <div flex style="background-color: antiquewhite">
+            sdaf
+        </div>
+       
+
+
+    </div>
+
+
+    <div flex style="background-color:blueviolet">
+        sds
+
+    </div>
+
+
+    <!-- <pre>{{LMController.lmResource | json}}</pre>  -->
 
 </md-content>
