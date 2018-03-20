@@ -104,6 +104,7 @@ var trace2 = {
   y: lineY,
   name: 'Regression',
   mode: 'lines'
+  
 };
 
 
