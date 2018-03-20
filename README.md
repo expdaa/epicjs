@@ -10,5 +10,5 @@ Starting a Server
 ------
 
 Run the following command from the project's root directory.  
-with nodemon installed: 'nodemon serverApp.js'  
-without nodemon installed: 'node serverApp.js'  
+with nodemon installed: `nodemon serverApp.js`  
+without nodemon installed: `node serverApp.js`  
