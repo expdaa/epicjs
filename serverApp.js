@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const htmlController = require('./server/controllers/htmlController');
+const fileController = require('./server/controllers/fileController');
 const opencpuApi = require('./server/controllers/opencpuApi');
 
 
@@ -13,6 +14,7 @@ app.use('/public', express.static(path.join(__dirname, 'node_modules')))
 
 
 htmlController(app,path,__dirname);
+fileController(app,path,__dirname);
 opencpuApi(app);
 
 

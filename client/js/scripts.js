@@ -5,10 +5,10 @@ function loadButtons(){
   }
 
   // produces Excel template based on model
-  function downloadTemplate(){
-    let selectedTemplate = document.querySelector('input[name="radio-1"]:checked').id;
-    console.log(selectedTemplate);
-  }
+  // function downloadTemplate(){
+  //   let selectedTemplate = document.querySelector('input[name="radio-1"]:checked').id;
+  //   console.log(selectedTemplate);
+  // }
 
    // upload template
   function uploadTemplate(){
