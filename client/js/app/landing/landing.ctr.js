@@ -4,20 +4,34 @@
         .module("epicJS")
         .controller("LandingController", LandingController);
 
-    LandingController.$inject = ['FileService','$scope'];
+    LandingController.$inject = ['FileService', '$scope'];
 
 
-    function LandingController(FileService,$scope) {
+    function LandingController(FileService, $scope) {
         var vm = this;
-     
-        vm.data;
 
-        vm.FileService = FileService;
+        /** Variables */
+        vm.sheetData;
+
+        /** Functions */
         vm.downloadTemplate = downloadTemplate;
 
+        /** Services */
+        vm.FileService = FileService;
 
+
+
+
+
+
+
+
+        /**
+         * Builds the API URL to download a specific template
+         * @param {*} tplName name of the template
+         */
         function downloadTemplate(tplName) {
-             window.open('/templates/' + tplName, '_blank', '');
+            window.open('/templates/' + tplName, '_blank', '');
         }
 
 
@@ -47,65 +61,50 @@
 
 
             for (i = 0; i != files.length; ++i) {
-                f          = files[i];
-
-                vm.file    = files[i];
+                f = files[i];
+                vm.file = files[i];
 
                 var reader = new FileReader();
-
-                var name      = f.name;
+                var name = f.name;
                 reader.onload = function (e) {
-
-
                     var data = e.target.result;
-
                     var workbook;
                     if (rABS) {
                         /* if binary string, read with type 'binary' */
                         //https://github.com/SheetJS/js-xlsx/issues/134 - to use dates
-                        workbook = XLSX.read(data, {type: 'binary', cellDates: true});
+                        workbook = XLSX.read(data, { type: 'binary', cellDates: true });
                     } else {
                         /* if array buffer, convert to base64 */
-                        var arr  = fixdata(data);
-                        workbook = XLSX.read(btoa(arr), {type: 'base64', cellDates: true});
+                        var arr = fixdata(data);
+                        workbook = XLSX.read(btoa(arr), { type: 'base64', cellDates: true });
                     }
 
                     /* DO SOMETHING WITH workbook HERE */
-
                     var first_sheet_name = workbook.SheetNames[0];
-
-                   
-
                     /* Get worksheet */
                     var worksheet = workbook.Sheets[first_sheet_name];
-
-                    console.log(worksheet);
-
-
-                    var test = XLSX.utils.sheet_to_row_object_array(worksheet);
-                    console.log(test);
-
+                    // var test = XLSX.utils.sheet_to_row_object_array(worksheet);
                     var testJSON = XLSX.utils.sheet_to_json(worksheet);
 
-                    console.log(XLSX.utils.sheet_to_json(worksheet));
 
-                    console.log(testJSON);
+
+                    // console.log(testJSON);
 
                     // test[0].color = "ok";
                     // console.log(Number(test[0].Airline));
 
 
-                    // $scope.$apply(function () {
-                    //     vm.processing = false;
-                    //     vm.data       = XLSX.utils.sheet_to_json(worksheet);
+                    $scope.$apply(function () {
+                        //     vm.processing = false;
+                        vm.sheetData = XLSX.utils.sheet_to_json(worksheet);
 
-                    //     // setting round number that comes from the path/round parameters
-                    //     for (let i = 0; i < vm.data.length; i++) {
-                    //         vm.data[i].roundNum = $routeParams.roundNum;
-                    //     }
-                    //     // vm.data = XLSX.utils.sheet_to_json(worksheet,{header:1});
-                    //     console.log(vm.data);
-                    // });
+                        //     // setting round number that comes from the path/round parameters
+                        //     for (let i = 0; i < vm.data.length; i++) {
+                        //         vm.data[i].roundNum = $routeParams.roundNum;
+                        //     }
+                        //     // vm.data = XLSX.utils.sheet_to_json(worksheet,{header:1});
+                        //     console.log(vm.data);
+                    });
 
 
                 };
@@ -136,7 +135,7 @@
         }
 
         //get a handle on the dropArea in the document
-        var dropId              = document.getElementById('dropArea');
+        var dropId = document.getElementById('dropArea');
 
         if (dropId.addEventListener) {
             dropId.addEventListener('dragenter', handleDragover, false);

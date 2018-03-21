@@ -27,10 +27,10 @@
         <div flex="50" style="background-color: white">
             <h2><br><br> Result of Linear Regression: </h2>
             <br><br>
-            Rows Uploaded: <b> 16 </b> <br><br>
-            Mean of X (independent): <b> 3.657 </b> <br><br>
-            Mean of y (dependent): <b> 3.152 </b> <br><br>
-            Equation: <b> y = 3.4311x - 8.4761  </b> <br><br>
+            Rows Uploaded: <b> {{LMController.regCount | number:0}} </b> <br><br>
+            Mean of X (independent): <b> {{LMController.regMeanX | number:4}}</b> <br><br>
+            Mean of y (dependent): <b> {{LMController.regMeanY | number:4}} </b> <br><br>
+            Equation: <b> {{LMController.formulaString}}  </b> <br><br>
         </div>       
 
         
