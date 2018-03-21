@@ -1,2 +1,12 @@
 /* body {background-color: #bdbdbd; color: #3a3a3a} */
 
+#dropArea{
+    border:2px dashed #bbb;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    padding:30px;
+    text-align:center;
+    /**font:20pt bold,"Vollkorn";*/
+    color:#bbb;
+}

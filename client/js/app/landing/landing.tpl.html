@@ -22,8 +22,8 @@
             <legend>Select a model: </legend>
             <md-radio-group ng-model="LandingController.data">
                 <md-radio-button value="LinearRegression" onclick="loadButtons();" name="radio-1" id="radio-1"> Linear Regression</md-radio-button>
-                <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2"> Naive Bayes </md-radio-button>
-                <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3"> K-Means</md-radio-button>
+                <!-- <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2"> Naive Bayes </md-radio-button>
+                <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3"> K-Means</md-radio-button> -->
             </md-radio-group>
             <p>Selected Value:
                 <span class="radioValue">{{ LandingController.data }}</span>
@@ -37,6 +37,13 @@
                 <md-button class="md-raised" ng-click="LandingController.downloadTemplate(LandingController.data)">Download Template</md-button>
                 <md-button class="md-raised" onclick="downloadTemplate();">Upload Template</md-button>
             </fieldset>
+
+
+            <md-input-container ng-show="!UploadTargetRatesCtrl.showWaiting">
+                <div id="dropArea" flex>Drop a rate template file here to see and upload data</div>
+
+            </md-input-container>
+            
         </div>
 
 
