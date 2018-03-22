@@ -5,12 +5,13 @@
         .controller("LMController", LMController)
 
 
-    LMController.$inject = ['lmResource', '$scope'];
+    LMController.$inject = ['lmResource', '$scope',];
 
 
     function LMController(lmResource, $scope) {
         var vm = this;
 
+        
 
         vm.lmResource = lmResource;
 

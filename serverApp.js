@@ -7,6 +7,10 @@ const htmlController = require('./server/controllers/htmlController');
 const fileController = require('./server/controllers/fileController');
 const opencpuApi = require('./server/controllers/opencpuApi');
 
+const mongoose = require('mongoose');
+const config = require('./config');
+const seedData = require('./models/seedData');
+
 
 // app.use('/favicon.ico', express.static(path.join(__dirname,'/public/img/favicon.ico'))); //make favicon available
 app.use('/public', express.static(path.join(__dirname, 'client')))
@@ -17,6 +21,9 @@ htmlController(app,path,__dirname);
 fileController(app,path,__dirname);
 opencpuApi(app);
 
+
+mongoose.connect(config.getDBConnStr());
+seedData();
 
 
 app.listen(3000, () => console.log('Listening on port 3000!')) //listen on port 3000

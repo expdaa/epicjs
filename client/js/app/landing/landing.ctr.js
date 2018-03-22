@@ -4,7 +4,7 @@
         .module("epicJS")
         .controller("LandingController", LandingController);
 
-    LandingController.$inject = ['FileService', '$scope'];
+    LandingController.$inject = ['FileService', '$scope',];
 
 
     function LandingController(FileService, $scope) {
@@ -18,10 +18,6 @@
 
         /** Services */
         vm.FileService = FileService;
-
-
-
-
 
 
 
