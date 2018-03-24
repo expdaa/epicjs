@@ -23,7 +23,7 @@ opencpuApi(app);
 
 
 mongoose.connect(config.getDBConnStr());
-seedData();
+seedData();//load data for the first time
 
 
 app.listen(3000, () => console.log('Listening on port 3000!')) //listen on port 3000
