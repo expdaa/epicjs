@@ -12,11 +12,11 @@
 
         var dataFactory = {};
 
-        dataFactory.getLm = function () {
+        dataFactory.getLm = function (dbId) {
 
             return $http({
                 method: 'GET',
-                url: '/lm',
+                url: '/lm/' + dbId,
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8'
                 }

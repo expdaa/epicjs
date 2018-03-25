@@ -21,9 +21,9 @@
                 controllerAs: 'LMController',
                 resolve:
                     {
-                        lmResource: function (DataService) {
-                            return DataService.getLm();
-                        }
+                        lmResource: ['$route', 'DataService', function ($route, DataService) {
+                            return DataService.getLm($route.current.params.dbId);
+                        }]
                     }
             })
 
