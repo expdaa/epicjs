@@ -5,10 +5,10 @@
         .module("epicJS")
         .factory("DataService", DataService);
 
-    DataService.$inject = ['$http'];
+    DataService.$inject = ['$http','$window'];
 
 
-    function DataService($http) {
+    function DataService($http,$window) {
 
         var dataFactory = {};
 
@@ -31,6 +31,28 @@
             });
 
         };
+
+        dataFactory.persistTplData = function (dataToPersist) {
+
+            $http({
+                method: 'POST',
+                url: '/persistlm',
+                data: dataToPersist,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(
+                function success(response) {
+                    console.log(response.data.msg + " " + response.data.documentId);
+                    $window.location.href="#/result/lm/"+response.data.documentId;
+                },
+                function error(response) {
+
+                }
+            );
+
+            return "success";
+        }
 
 
 

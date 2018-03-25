@@ -15,7 +15,7 @@
                 controllerAs: 'LandingController'
             })
 
-            .when('/result/lm', {
+            .when('/result/lm/:dbId', {
                 templateUrl: '/public/js/app/result/lm/lm.tpl.html',
                 controller: 'LMController',
                 controllerAs: 'LMController',

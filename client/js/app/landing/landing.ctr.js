@@ -4,10 +4,10 @@
         .module("epicJS")
         .controller("LandingController", LandingController);
 
-    LandingController.$inject = ['FileService', '$scope',];
+    LandingController.$inject = ['FileService', '$scope', 'DataService'];
 
 
-    function LandingController(FileService, $scope) {
+    function LandingController(FileService, $scope, DataService) {
         var vm = this;
 
         /** Variables */
@@ -84,22 +84,28 @@
 
 
 
-                    // console.log(testJSON);
-
-                    // test[0].color = "ok";
-                    // console.log(Number(test[0].Airline));
-
 
                     $scope.$apply(function () {
                         //     vm.processing = false;
                         vm.sheetData = XLSX.utils.sheet_to_json(worksheet);
 
-                        //     // setting round number that comes from the path/round parameters
-                        //     for (let i = 0; i < vm.data.length; i++) {
-                        //         vm.data[i].roundNum = $routeParams.roundNum;
-                        //     }
-                        //     // vm.data = XLSX.utils.sheet_to_json(worksheet,{header:1});
-                        //     console.log(vm.data);
+
+                        console.log(vm.sheetData);
+                        var parsedData = [];
+
+                        vm.sheetData.forEach((obj, idx) => {
+                            if (obj.x !== "(independent variable)") {
+                                parsedData.push({
+                                    id: idx,
+                                    x: obj.x,
+                                    y: obj.y
+                                });
+                            }
+                        });
+
+                        DataService.persistTplData(parsedData);
+
+
                     });
 
 

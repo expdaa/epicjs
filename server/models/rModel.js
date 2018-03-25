@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var rSchema = new Schema({
-    userOrigin : String,
+    userIP : String,
     intercept : Number,
     const : Number,
     coords : [
