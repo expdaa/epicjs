@@ -12,7 +12,12 @@
             .when('/', {
                 templateUrl: '/public/js/app/landing/landing.tpl.html',
                 controller: 'LandingController',
-                controllerAs: 'LandingController'
+                controllerAs: 'LandingController',
+                resolve: {
+                    dbIdsResource : function(DataService){
+                        return DataService.getAllDBIds();
+                    }
+                }
             })
 
             .when('/result/lm/:dbId', {

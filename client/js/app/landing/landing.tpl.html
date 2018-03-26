@@ -1,10 +1,6 @@
 <md-content layout="column" layout-fill>
 
-    <div flex="30" layout-padding>
-
-
-        <a href="#/result/lm">
-            LM Result testing</a>
+    <div flex="20" layout-padding style="background-color: #242323">
 
         <h1>R-Hack</h1>
 
@@ -15,7 +11,7 @@
 
 
 
-    <div flex layout-padding>
+    <div flex="40" layout-padding style="background-color: #e0e0e2">
 
 
         <fieldset>
@@ -25,9 +21,9 @@
                 <!-- <md-radio-button value="nb" onclick="loadButtons();" name="radio-2" id="radio-2"> Naive Bayes </md-radio-button>
                 <md-radio-button value="km" onclick="loadButtons();" name="radio-3" id="radio-3"> K-Means</md-radio-button> -->
             </md-radio-group>
-            <p>Selected Value:
+            <!-- <p>Selected Value:
                 <span class="radioValue">{{ LandingController.data }}</span>
-            </p>
+            </p> -->
         </fieldset>
         <br>
         <br>
@@ -35,31 +31,60 @@
         <div id="template-buttons" style="visibility: hidden;">
             <fieldset>
                 <md-button class="md-raised" ng-click="LandingController.downloadTemplate(LandingController.data)">Download Template</md-button>
-                <md-button class="md-raised" onclick="downloadTemplate();">Upload Template</md-button>
+
+                <md-input-container>
+                    <div id="dropArea" flex>
+                        Drop a completed template file here to see and upload data
+                    </div>
+                </md-input-container>
             </fieldset>
 
 
-            <md-input-container ng-show="!UploadTargetRatesCtrl.showWaiting">
-                <div id="dropArea" flex>Drop a rate template file here to see and upload data</div>
-
-            </md-input-container>
 
 
-            <pre>
-                {{LandingController.sheetData}}
-    
-        </pre>
+
+            <pre>{{LandingController.sheetData}}</pre>
 
         </div>
 
 
 
-        <h1>A Very Simple DPU</h1>
 
-        <button id="submitbutton">Calculate Standard Deviation</button>
+    </div>
+
+    <div flex>
+
+
+        <div layout="column" ng-cloak flex>
+            <md-toolbar class="md-warn" style="background-color:#919191">
+                <div class="md-toolbar-tools">
+                    <h2 class="md-flex" style="color:#ffffff">History</h2>
+                </div>
+            </md-toolbar>
+
+            <md-content layout="row" flex>
+
+                <md-card ng-repeat="item in LandingController.dbIdsResource.documentIds">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">IP: {{item.userIP}}</span>
+                            <span class="md-subhead">ID: {{item.id}}</span>
+                        </md-card-title-text>
+
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button ng-click="LandingController.loadModel(item.id)">View</md-button>
+                    </md-card-actions>
+                </md-card>
+
+            </md-content>
+
+
+        </div>
 
 
     </div>
+
 
 
 

@@ -55,6 +55,26 @@
         }
 
 
+        dataFactory.getAllDBIds = function () {
+
+            return $http({
+                method: 'GET',
+                url: '/findall',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+                }
+
+            }).then(function successCallback(response) {
+
+                return response.data;
+
+            }, function errorCallback(response) {
+                return response.data;
+
+            });
+
+        };
+
 
 
         return dataFactory;

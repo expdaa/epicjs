@@ -4,10 +4,10 @@
         .module("epicJS")
         .controller("LandingController", LandingController);
 
-    LandingController.$inject = ['FileService', '$scope', 'DataService'];
+    LandingController.$inject = ['FileService', '$scope', 'DataService','dbIdsResource','$window'];
 
 
-    function LandingController(FileService, $scope, DataService) {
+    function LandingController(FileService, $scope, DataService,dbIdsResource,$window) {
         var vm = this;
 
         /** Variables */
@@ -15,11 +15,19 @@
 
         /** Functions */
         vm.downloadTemplate = downloadTemplate;
+        vm.loadModel = loadModel;
 
         /** Services */
         vm.FileService = FileService;
+        vm.dbIdsResource = dbIdsResource;
+
+        console.log(vm.dbIdsResource);
 
 
+        function loadModel(id) {
+            $window.location.href="#/result/lm/"+id;
+
+        }
 
 
         /**

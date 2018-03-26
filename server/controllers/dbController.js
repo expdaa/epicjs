@@ -39,4 +39,33 @@ module.exports = function (app,path,dirname) {
     });
 
 
+    app.get('/findall', (req,res) => {
+
+        RModel.find({}, function(err,results){ 
+
+
+            var documentIds = [];
+
+            results.forEach(result => {
+                documentIds.push({
+                    id: result._id,
+                    userIP : result.userIP
+
+                });
+            });
+
+            res.status(200);
+            res.send({
+                msg: "Success! Document IDs in the database:",
+                documentIds : documentIds
+            })
+
+
+        });
+
+
+
+    });
+
+
 }
